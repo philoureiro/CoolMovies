@@ -2,12 +2,12 @@ import React, { useEffect } from "react"
 import { BackHandler } from "react-native"
 import { Container, Text } from "./styles"
 
-const MovieDetails = () => {
+const Search = () => {
   return (
     <Container>
-      <Text>MovieDetails</Text>
+      <Text>Search</Text>
     </Container>
   )
 }
 
-export default MovieDetails
+export default Search

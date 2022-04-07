@@ -2,12 +2,12 @@ import React, { useEffect } from "react"
 import { BackHandler } from "react-native"
 import { Container, Text } from "./styles"
 
-const MovieDetails = () => {
+const Profile = () => {
   return (
     <Container>
-      <Text>MovieDetails</Text>
+      <Text>Profile</Text>
     </Container>
   )
 }
 
-export default MovieDetails
+export default Profile
