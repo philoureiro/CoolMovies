@@ -14,12 +14,13 @@ const MyTabs = () => {
       initialRouteName="Feed"
       tabBar={(props) => (
         <BlurView
-          intensity={5}
+          intensity={10}
           style={{
             backgroundColor: "transparent",
-            padding: 2,
             justifyContent: "center",
-            bottom: 0,
+            height: 60,
+
+            bottom: 20,
             left: 0,
             right: 0,
             borderTopLeftRadius: 10,
@@ -32,9 +33,11 @@ const MyTabs = () => {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: "#ff2e2e",
+        tabBarInactiveTintColor: "white",
         tabBarStyle: {
           backgroundColor: "transparent",
-          bottom: 0,
+
+          bottom: -10,
           shadowColor: "#171717",
           shadowOffset: { width: -2, height: 4 },
           shadowOpacity: 0.3,
@@ -57,6 +60,7 @@ const MyTabs = () => {
         component={Search}
         options={{
           tabBarLabel: "Search",
+
           tabBarIcon: ({ color }) => (
             <Ionicons name="ios-search-outline" color={color} size={26} />
           ),

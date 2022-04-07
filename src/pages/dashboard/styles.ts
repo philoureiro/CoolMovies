@@ -5,6 +5,6 @@ export const Container = styled.View`
   height: 100%;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #06000f;
 `
 export const Text = styled.Text``

@@ -10,7 +10,10 @@ const Dashboard = () => {
   })
   return (
     <Container>
-      <Image source={require("../../assets/spyder-man.jpeg")}></Image>
+      <Image
+        source={require("../../assets/spyder-man.jpeg")}
+        resizeMode="cover"
+      />
     </Container>
   )
 }
