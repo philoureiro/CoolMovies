@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { BackHandler } from "react-native"
+import { BackHandler, Image } from "react-native"
 import { Container, Text } from "./styles"
 
 const Dashboard = () => {
@@ -10,7 +10,7 @@ const Dashboard = () => {
   })
   return (
     <Container>
-      <Text>Dashboard</Text>
+      <Image source={require("../../assets/spyder-man.jpeg")}></Image>
     </Container>
   )
 }

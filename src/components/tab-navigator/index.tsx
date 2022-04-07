@@ -1,17 +1,46 @@
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs"
-import { NavigationContainer } from "@react-navigation/native"
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import Ionicons from "react-native-vector-icons/Ionicons"
+import FontAwesome from "react-native-vector-icons/FontAwesome"
+import Feather from "react-native-vector-icons/Feather"
 import { Dashboard, MovieDetails, Profile, Search } from "../../pages"
-import SplashScreen from "../splash-screen"
+import { BottomTabBar } from "@react-navigation/bottom-tabs"
+import { BlurView } from "expo-blur"
 
-const Tab = createMaterialBottomTabNavigator()
+const Tab = createBottomTabNavigator()
 
 const MyTabs = () => {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
-      activeColor="#e91e63"
-      barStyle={{ backgroundColor: "black" }}
+      tabBar={(props) => (
+        <BlurView
+          intensity={5}
+          style={{
+            backgroundColor: "transparent",
+            padding: 2,
+            justifyContent: "center",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            borderTopLeftRadius: 10,
+            position: "absolute",
+          }}
+        >
+          <BottomTabBar {...props} />
+        </BlurView>
+      )}
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarActiveTintColor: "#ff2e2e",
+        tabBarStyle: {
+          backgroundColor: "transparent",
+          bottom: 0,
+          shadowColor: "#171717",
+          shadowOffset: { width: -2, height: 4 },
+          shadowOpacity: 0.3,
+          shadowRadius: 3,
+        },
+      })}
     >
       <Tab.Screen
         name="Dashboard"
@@ -19,7 +48,7 @@ const MyTabs = () => {
         options={{
           tabBarLabel: "Dashboard",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <Ionicons name="ios-home-outline" color={color} size={26} />
           ),
         }}
       />
@@ -29,7 +58,7 @@ const MyTabs = () => {
         options={{
           tabBarLabel: "Search",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <Ionicons name="ios-search-outline" color={color} size={26} />
           ),
         }}
       />
@@ -39,7 +68,7 @@ const MyTabs = () => {
         options={{
           tabBarLabel: "Movie Details",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <Feather name="play" color={color} size={26} />
           ),
         }}
       />
@@ -49,7 +78,7 @@ const MyTabs = () => {
         options={{
           tabBarLabel: "Profile",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <FontAwesome name="user-o" color={color} size={26} />
           ),
         }}
       />
